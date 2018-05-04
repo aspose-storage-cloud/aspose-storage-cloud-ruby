@@ -2,7 +2,7 @@ This repository contains Aspose.Storage Cloud SDK for Ruby source code. This SDK
 See [API Reference](https://apireference.aspose.cloud/storage/) for full API specification.
 
 ## How to use the SDK?
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution]() (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/storagecloud/Available+SDKs).
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [RubyGem distribution]() (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/storagecloud/Available+SDKs).
 
 ### Prerequisites
 

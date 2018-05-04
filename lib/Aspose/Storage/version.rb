@@ -24,6 +24,6 @@
  # </summary>
  # --------------------------------------------------------------------------------------------------------------------
  #
-module AsposeStorageSdk
-  VERSION = "18.4"
+module AsposeStorageCloud
+  VERSION = "18.5"
 end

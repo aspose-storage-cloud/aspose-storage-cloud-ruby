@@ -25,7 +25,7 @@
 
 require 'uri'
 
-module AsposeStorageSdk
+module AsposeStorageCloud
   #
   # Class for storing API configuration info
   #

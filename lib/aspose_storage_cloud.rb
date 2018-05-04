@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="aspose_storage_sdk.rb">
+# <copyright company="Aspose Pty Ltd" file="aspose_storage_cloud.rb">
 #   Copyright (c) 2018 Aspose.Storage for Cloud
 # </copyright>
 # <summary>
@@ -51,11 +51,11 @@ require_relative '../lib/Aspose/Storage/models/upload_response'
 # APIs
 require_relative '../lib/Aspose/Storage/api/storage_api'
 
-module AsposeStorageSdk
+module AsposeStorageCloud
   # Main module
   class << self
     # Configure sdk using block.
-    # AsposeStorageSdk.configure do |config|
+    # AsposeStorageCloud.configure do |config|
     #   config.username = "xxx"
     #   config.password = "xxx"
     # end

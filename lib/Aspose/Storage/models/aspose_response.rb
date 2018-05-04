@@ -1,7 +1,8 @@
 
 require 'date'
 require 'time'
-module AsposeStorageSdk
+
+module AsposeStorageCloud
 #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="AsposeResponse.rb">
@@ -166,7 +167,7 @@ module AsposeStorageSdk
           end
         end
       else # model
-        temp_model = AsposeStorageSdk.const_get(type).new
+        temp_model = AsposeStorageCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

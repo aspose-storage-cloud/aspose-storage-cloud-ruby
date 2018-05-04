@@ -25,7 +25,7 @@
 
 require 'uri'
 
-module AsposeStorageSdk
+module AsposeStorageCloud
   #
   # Aspose.Storage for Cloud API
   #

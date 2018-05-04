@@ -23,7 +23,7 @@
  # </summary>
  # --------------------------------------------------------------------------------------------------------------------
 
-module AsposeStorageSdk
+module AsposeStorageCloud
   #
   # ApiError class for error handling
   #

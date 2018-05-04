@@ -2,8 +2,8 @@
 $:.push File.expand_path("../lib/Aspose/Storage", __FILE__)
 require File.expand_path("../lib/Aspose/Storage/version.rb", __FILE__)
 Gem::Specification.new do |s|
-  s.name        = "aspose_storage_sdk"
-  s.version     = AsposeStorageSdk::VERSION
+  s.name        = "aspose_storage_cloud"
+  s.version     = AsposeStorageCloud::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = 'Aspose'
   s.homepage    = 'https://github.com/aspose-storage-cloud/aspose-storage-cloud-ruby'

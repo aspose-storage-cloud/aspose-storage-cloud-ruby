@@ -25,7 +25,7 @@
  # --------------------------------------------------------------------------------------------------------------------
  #
 
-module AsposeStorageSdk
+module AsposeStorageCloud
 
  #
  # Request model for PostMoveFolder operation.

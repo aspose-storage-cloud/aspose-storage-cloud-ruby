@@ -24,7 +24,7 @@
 # --------------------------------------------------------------------------------------------------------------------
 #
 
-module AsposeStorageSdk;
+module AsposeStorageCloud;
 require_relative 'base_test_context'
 class StorageApiTests < BaseTestContext
 

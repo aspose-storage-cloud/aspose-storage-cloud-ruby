@@ -33,7 +33,7 @@ require 'mimemagic'
 require_relative 'version'
 require_relative 'api_error'
 
-module AsposeStorageSdk
+module AsposeStorageCloud
   #
   # api client is mainly responsible for making the HTTP call to the API backend.
   # 
@@ -53,7 +53,7 @@ module AsposeStorageSdk
       @default_headers = {
         'Content-Type' => "application/json",
         'x-aspose-client' => "ruby sdk",
-        'x-aspose-version' => "#{ AsposeStorageSdk::VERSION }"
+        'x-aspose-version' => "#{ AsposeStorageCloud::VERSION }"
       }
     end
 
@@ -231,7 +231,7 @@ module AsposeStorageSdk
         end
       else
         # models, e.g. Pet
-        AsposeStorageSdk.const_get(return_type).new.tap do |model|
+        AsposeStorageCloud.const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end
       end
