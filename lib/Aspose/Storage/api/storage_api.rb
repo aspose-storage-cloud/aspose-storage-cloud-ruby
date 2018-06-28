@@ -824,8 +824,8 @@ module AsposeStorageCloud
       data
     end
 
-    # Create the folder 
-    # 
+    # Create the folder
+    #
     # @param request PutCreateFolderRequest
     # @return [Array<(CreateFolderResponse, Fixnum, Hash)>]
     # CreateFolderResponse data, response status code and response headers

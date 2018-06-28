@@ -81,7 +81,7 @@ module AsposeStorageCloud
     # Defines the access token (Bearer) used with OAuth2.
     attr_accessor :access_token
 	
-	# Defines the refresh token (Bearer) used with OAuth2.
+    # Defines the refresh token (Bearer) used with OAuth2.
     attr_accessor :refresh_token
 
     # Set this to enable/disable debugging. When enabled (set to true), HTTP request/response
@@ -112,7 +112,7 @@ module AsposeStorageCloud
 	
     def initialize
       @scheme = 'https'
-      @host = "api.aspose.cloud"
+      @host = 'api.aspose.cloud'
       @api_version = V1_API_VERSION
       @api_key = {}
       @api_key_prefix = {}

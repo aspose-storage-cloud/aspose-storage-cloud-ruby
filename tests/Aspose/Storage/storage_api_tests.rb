@@ -24,7 +24,7 @@
 # --------------------------------------------------------------------------------------------------------------------
 #
 
-module AsposeStorageCloud;
+module AsposeStorageCloud
 require_relative 'base_test_context'
 class StorageApiTests < BaseTestContext
 
@@ -33,25 +33,21 @@ class StorageApiTests < BaseTestContext
   #
   #  Create a specific file.
   #
-  #
-
   def test_PutCreate()
 
-
-    path = 'folder/FileTest.pdf'
+    path = 'folder/FileTest.txt'
     versionId = nil
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = GetDownloadRequest.new(path, versionId, storage)
 
     result = @storage_api.get_download(request)
     assert result != nil , 'Error while downloading document'
-    file = result
+    file = File.read(result)
 
-
-    #file = File.read('FileTest.pdf')
-    path = 'folder1/FileTest.pdf'
+    #file = File.read('FileTest.txt')
+    path = 'folder1/FileTest.txt'
     version_id = nil
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = PutCreateRequest.new(path, file, version_id, storage)
 
     result = @storage_api.put_create(request)
@@ -60,62 +56,53 @@ class StorageApiTests < BaseTestContext
   end
 
 
-
   #
-  #
-  # Test case for getDownload
+  #  Test case for getDownload
   #
   #  Download a specific file.
   #
-  #
-
   def test_get_download()
 
     path = 'folder1/FileTest.pdf'
     versionId = nil
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = GetDownloadRequest.new(path, versionId, storage)
     result = @storage_api.get_download(request)
-    assert  result != nil, 'Error while downloading document'
+    assert result != nil, 'Error while downloading document'
+
   end
 
 
-
   #
+  #  Test case for deleteFile
   #
-  #   Test case for deleteFile
+  #  Remove a specific file.
   #
-  #   Remove a specific file.
-  #
-  #
-
   def test_delete_file()
 
-    path = 'FileTest.pdf'
+    path = 'folder/FileTest.pdf'
     versionId = nil
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = DeleteFileRequest.new(path, versionId, storage)
 
     result = @storage_api.delete_file(request)
     assert result.code == 200,'Error while deleting document'
+
   end
 
 
   #
+  #  Test case for putCopy
   #
-  #   Test case for putCopy
+  #  Copy a specific file.
   #
-  #   Copy a specific file.
-  #
-  #
-
   def test_put_copy
 
     path = 'folder1/FileTest.pdf'
     newdest = 'folder2/folder1/FileTest.pdf'
     versionId = nil
-    storage = 'StorageName'
-    destStorage = 'DestStorageName'
+    storage = 'First Storage'
+    destStorage = 'First Storage'
     request = PutCopyRequest.new(path, newdest, versionId, storage, destStorage)
 
     result = @storage_api.put_copy(request)
@@ -124,21 +111,18 @@ class StorageApiTests < BaseTestContext
   end
 
 
-
   #
   #  Test case for postMoveFile
   #
   #  Move a specific file.
   #
-  #
-
   def test_post_move_file
 
     src = 'folder1/FileTest.pdf'
     dest = 'folder3/folder1/FileTest.pdf'
     versionId = nil
-    storage = 'StorageName'
-    destStorage = 'StorageName'
+    storage = 'First Storage'
+    destStorage = 'First Storage'
     request = PostMoveFileRequest.new(src, dest, versionId, storage, destStorage)
 
     result = @storage_api.post_move_file(request)
@@ -147,17 +131,16 @@ class StorageApiTests < BaseTestContext
   end
 
 
+  #
   #  Test case for putCreate
   #
   #  Create a specific folder.
   #
-  #
-
   def test_put_create_folder
 
     path = 'folder4'
-    storage = 'StorageName'
-    destStorage = 'DestStorageName'
+    storage = 'First Storage'
+    destStorage = 'First Storage'
     request = PutCreateFolderRequest.new(path, storage, destStorage)
 
     result = @storage_api.put_create_folder(request)
@@ -166,18 +149,15 @@ class StorageApiTests < BaseTestContext
   end
 
 
-
   #
   #  Test case for getListFiles
   #
   #  Get the file listing of a specific folder.
   #
-  #
-
   def test_get_list_files()
 
     path = 'folder1'
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = GetListFilesRequest.new(path, storage)
 
     result = @storage_api.get_list_files(request)
@@ -192,12 +172,10 @@ class StorageApiTests < BaseTestContext
   #
   #  Remove a specific folder.
   #
-  #
-
   def test_delete_folder
 
     path = 'folder4'
-    storage = 'StorageName'
+    storage = 'First Storage'
     recursive = true
     request = DeleteFolderRequest.new(path, storage, recursive)
 
@@ -212,15 +190,12 @@ class StorageApiTests < BaseTestContext
   #
   #  Copy a folder.
   #
-  #
-  #
-
   def test_put_copy_folder()
 
     path = 'folder5'
     newdest = 'folder6/folder5'
-    storage = 'StorageName'
-    dest_storage = 'DestStorageName'
+    storage = 'First Storage'
+    dest_storage = 'First Storage'
     request = PutCopyFolderRequest.new(path, newdest, storage, dest_storage)
 
     result = @storage_api.put_copy_folder(request)
@@ -228,19 +203,18 @@ class StorageApiTests < BaseTestContext
 
   end
 
+
   #
   #  Test case for postMoveFolder
   #
   #  Move a specific folder.
   #
-  #
-
   def test_post_move_folder()
 
     src = 'folder6'
     dest = 'folder7/folder6'
-    storage = 'StorageName'
-    dest_storage = 'DestStorageName'
+    storage = 'First Storage'
+    dest_storage = 'First Storage'
     request = PostMoveFolderRequest.new(src, dest, storage, dest_storage)
 
     result = @storage_api.post_move_folder(request)
@@ -254,16 +228,14 @@ class StorageApiTests < BaseTestContext
   #
   #  Check the disk usage of the current account.
   #
-  #
-
   def test_get_disc_usage()
 
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = GetDiscUsageRequest.new(storage)
 
     result = @storage_api.get_disc_usage(request)
     assert result.code == 200, 'Error getting disc usage'
-    assert result.discUsage != nil
+    assert result.disc_usage != nil
 
   end
 
@@ -273,18 +245,16 @@ class StorageApiTests < BaseTestContext
   #
   #  Check if a specific file or folder exists.
   #
-  #
-
   def test_get_is_exist()
 
     path = 'folder7'
     versionId = nil
-    storage = 'StorageName'
+    storage = 'First Storage'
     request = GetIsExistRequest.new(path, versionId, storage)
 
     result = @storage_api.get_is_exist(request)
     assert result.code == 200, 'Error get is file or folder exist'
-    assert result.fileExist != nil
+    assert result.file_exist != nil
 
   end
 
@@ -294,11 +264,9 @@ class StorageApiTests < BaseTestContext
   #
   #  Check if storage exists.
   #
-  #
-
   def test_get_is_storage_exist()
 
-    name = 'StorageName'
+    name = 'First Storage'
     request = GetIsStorageExistRequest.new(name)
 
     result = @storage_api.get_is_storage_exist(request)
@@ -312,21 +280,17 @@ class StorageApiTests < BaseTestContext
   #
   #  Get the file's versions list.
   #
-  #
-
   def test_get_list_file_versions
 
-
     path = 'folder1/FileTest.pdf'
-    storage = "StorageName"
+    storage = 'First Storage'
     request = GetListFileVersionsRequest.new(path, storage)
 
     result = @storage_api.get_list_file_versions(request)
     assert result.code == 200, 'Error get list file versions'
-    assert result.fileVersions != nil
+    assert result.file_versions != nil
 
   end
-
 
 end
 end

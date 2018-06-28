@@ -2,7 +2,7 @@ This repository contains Aspose.Storage Cloud SDK for Ruby source code. This SDK
 See [API Reference](https://apireference.aspose.cloud/storage/) for full API specification.
 
 ## How to use the SDK?
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [RubyGem distribution]() (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/storagecloud/Available+SDKs).
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [RubyGem distribution](https://rubygems.org/gems/aspose_storage_cloud) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/storagecloud/Available+SDKs).
 
 ### Prerequisites
 
@@ -18,9 +18,9 @@ To use Aspose Storage for Cloud Ruby SDK you need to register an account with [A
 @config.api_key['app_sid'] = ''
 @api_client = ApiClient.new @config
 @storage_api = StorageApi.new @api_client
-$path = "folder/FileTest.pdf"
+$path = 'folder/FileTest.pdf'
 $versionId = nil
-$storage = "StorageName"
+$storage = 'StorageName'
 $request = GetDownloadRequest.new($path, $versionId, $storage)
 $result = @storage_api.get_download($request)
 ```
@@ -33,7 +33,7 @@ Please put your credentials into [Configuration](lib/Aspose/Storage/configuratio
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Comparison with Old generation SDK
-New SDK has the following advantages over the [previous version](https://github.com/aspose-storage/Aspose.Storage-for-Cloud):
+New SDK has the following advantages over the previous version:
 + Classes, methods and properties have comments and are IDE-friendly
 + Better security
 + Usage of Request/Response classes to represent long lists of parameters. This allows for cleaner code and easier backwards-compatibility going forward

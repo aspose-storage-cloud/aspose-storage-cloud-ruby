@@ -37,7 +37,7 @@ class BaseTestContext < Minitest::Test
     path = File.join(File.dirname(File.dirname(File.absolute_path(__FILE__))), 'Storage/config.json')
     $contents = File.read(path)
     data_hash = JSON.parse($contents)
-    #TODO: Get your AppSID and AppKey at https://dashboard.groupdocs.cloud
+    #TODO: Get your AppSID and AppKey at https://dashboard.aspose.cloud
     #     (free registration is required).
     AsposeStorageCloud.configure do |config|
       config.api_key['api_key'] = data_hash['AppKey']

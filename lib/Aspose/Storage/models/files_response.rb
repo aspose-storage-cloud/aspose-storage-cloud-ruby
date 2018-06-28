@@ -1,7 +1,3 @@
-
-require 'date'
-require 'time'
-
 module AsposeStorageCloud
 #
  # --------------------------------------------------------------------------------------------------------------------
@@ -148,9 +144,11 @@ module AsposeStorageCloud
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        Time.strptime(value, "/Date(%Q%z)/")
+        format = (value.include? '+') ? '/Date(%Q%z)/' : '/Date(%Q)/'
+        Time.strptime(value, format).utc.to_datetime
       when :Date
-        Time.strptime(value, "/Date(%Q%z)/")
+        format = (value.include? '+') ? '/Date(%Q%z)/' : '/Date(%Q)/'
+        Time.strptime(value, format).utc.to_datetime.to_date
       when :String
         value.to_s
       when :Integer
